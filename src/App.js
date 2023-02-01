@@ -4,13 +4,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Meme from "./components/meme";
 import State from "./components/state";
+import Counter from "./components/counter";
+import Things from './components/things'
 
 function App() {
   return (
     <div>
       {/* <Header />
       <Meme /> */}
-      <State />
+      {/* <State /> */}
+      {/* <Counter /> */}
+      <Things />
     </div>
   );
 }
