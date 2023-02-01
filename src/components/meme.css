@@ -1,0 +1,13 @@
+.input{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.second-input{
+  padding-left: 6rem;
+}
+input{
+    height: 5vh;
+    width: 300px;
+}
