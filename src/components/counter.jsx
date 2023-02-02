@@ -12,6 +12,9 @@ export default function Counter() {
     function subtract(){
         setCount(prevCount => prevCount -1 )
     }
+    function reset(){
+        setCount(count => 0)
+    }
     return (
         <div className="counter">
             <button className="counter--minus" onClick={subtract}>–</button>
@@ -19,6 +22,7 @@ export default function Counter() {
                 <h1>{count}</h1>
             </div>
             <button className="counter--plus" onClick={add}>+</button>
+            <button className="counter--plus" onClick={reset} ></button>
         </div>
     )
 }
