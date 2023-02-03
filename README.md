@@ -18,3 +18,4 @@ Learnt How to Add New stuffs to a list using state(Things File)
 
 2/2/2023
 Learnt how to access object in states and also learnt how to change objects in state using call back function
+                Passing State as Props

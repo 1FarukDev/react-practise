@@ -1,4 +1,4 @@
-/* * {
+* {
     box-sizing: border-box;
 }
 
@@ -57,4 +57,4 @@ body {
 .counter--minus {
     margin-right: -20px;
     z-index: 1;
-} */
+}

@@ -11,12 +11,12 @@ import Objects from './components/objects'
 function App() {
   return (
     <div>
-      <Header />
-      <Meme />
+      {/* <Header />
+      <Meme /> */}
       {/* <State /> */}
       {/* <Counter /> */}
       {/* <Things /> */}
-      {/* <Objects /> */}
+      <Objects />
     </div>
   );
 }
