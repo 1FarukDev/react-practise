@@ -23,19 +23,49 @@
 
 // export default App;
 
+// import React, { useState } from "react"
+// import Header from "./components/Header";
+// import Body from "./components/body";
+// // import Body from "./Body"
 
-import React, { useState } from "react"
-import Header from "./components/Header";
-import Body from "./components/body";
-// import Body from "./Body"
+// export default function App() {
+//   const [user, setUser] = React.useState("Faruk")
+//   let owner = useState(user)
+//     return (
+//         <main>
+//             <Header name={user}/>
+//             <Body name={user}/>
+//         </main>
+//     )
+// }
 
-export default function App() {
-  const [user, setUser] = React.useState("Faruk")
-  let owner = useState(user)
-    return (
-        <main>
-            <Header name={user}/>
-            <Body name={user}/>
-        </main>
-    )
+import React, { useState } from "react";
+import boxes from "./boxes";
+import Box from "./box";
+import "./boxstyle.css";
+export default function App(props) {
+  function handleClick(id) {
+    console.log(id);
+  }
+  const [box, setBox] = useState(boxes);
+  const styles = {
+    backgroundColor: props.darkMode ? "#222222" : "#cccccc",
+  };
+  const mappedBox = boxes.map((square) => (
+    <Box 
+    key={square.id} 
+    id={square.id} 
+    on={square.on} 
+    style={styles} 
+    handleClick={handleClick} />
+  ));
+  /**
+   * Challenge part 1:
+   * 1. Initialize state with the default value of the
+   *    array pulled in from boxes.js
+   * 2. Map over that state array and display each one
+   *    as an empty square (black border, transparent bg color)
+   *    (Don't worry about using the "on" property yet)
+   */
+  return <main>{mappedBox}</main>;
 }
