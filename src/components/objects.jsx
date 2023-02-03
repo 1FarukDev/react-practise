@@ -105,8 +105,6 @@ export default function App() {
     email: "itsmyrealname@example.com",
     isFavorite: false,
   });
-
-  let starIcon = contact["isFavorite"] === false ? star : starFilled;
   function toggleFavorite() {
     setContact((prevContact) => {
       return {
@@ -121,7 +119,7 @@ export default function App() {
       <article className="card">
         <img src="./images/user.png" className="card--image" />
         <div className="card--info">
-          <Star isFilled={contact.isFavorite}/>
+          <Star isFilled={contact.isFavorite} handleClick={toggleFavorite}/>
           <h2 className="card--name">
             {`${contact["firstName"]} ${contact.lastName}`}
           </h2>
