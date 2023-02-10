@@ -115,12 +115,27 @@
 import React, { useState } from "react";
 export default function App() {
   
- const [message, setMessage] = React.useState(["a", "b", "c"])
- let messageText = <h1>You have {message.length} of unread Messages</h1>
- let messageNo = <h1>You have no Messages</h1>
+ const [message, setMessage] = React.useState(["a", "b"])
+//  let messageText = <h1>You have {message.length} of unread Messages</h1>
+//  let messageNo = <h1>You have no Messages</h1>
+//  if(message == 1){
+//       return messageText = "<h1>You have 1 message</h1>"
+//  }
+// const aMessage = "You have one message"
+// const moreThanOne = "you have "
+// if(message.length === 1){
+//     return  messageText = "You have a message"
+// }else if(message.length > 1){
+//   return messageText = `You hve ${message.length} unread Messages`
+// }else{
+//   return messageText = "Your are all caught up"
+// }
   return(
     <div>
-      {message.length > 0 ? messageText  :  messageNo }
+      {
+      // message.length === 0 ? <h1>Youre all caught up</h1> : <h1>You have {message.length} unread message{message.length >1 && "s"}</h1>
+      message.length === 0 ? <h1>Youre all caught up</h1> : <h1>You have {message.length} unread {message.length > 1 ? "messages" : "message"}</h1>
+      }
       </div>
   );
 }
