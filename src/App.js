@@ -113,15 +113,15 @@
 // }
 
 import React, { useState } from "react";
-import boxes from "./boxes";
-import Box from "./box";
-import "./boxstyle.css";
-export default function App(props) {
+export default function App() {
   
- const [message, setMessage] = React.useState(["a", "b"])
+ const [message, setMessage] = React.useState(["a", "b", "c"])
+ let messageText = <h1>You have {message.length} of unread Messages</h1>
+ let messageNo = <h1>You have no Messages</h1>
   return(
     <div>
-      {message.length > 0 && <h1>You have {message.length} of unread Messages</h1>}
+      {message.length > 0 ? messageText  :  messageNo }
       </div>
   );
 }
+ 
