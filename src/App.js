@@ -143,10 +143,12 @@
 
 import React, { useState } from "react";
 import Form from "./components/form";
+import Meme from "./components/meme";
 export default function App() {
   return(
     <div>
-      <Form />
+      {/* <Form /> */}
+      <Meme />
       </div>
   );
 }
