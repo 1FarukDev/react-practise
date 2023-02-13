@@ -142,6 +142,7 @@
  
 
 import React, { useState } from "react";
+import Effect from "./components/effect";
 import Form from "./components/form";
 import Meme from "./components/meme";
 export default function App() {
@@ -149,6 +150,7 @@ export default function App() {
     <div>
       {/* <Form /> */}
       <Meme />
+      {/* <Effect /> */}
       </div>
   );
 }

@@ -47,7 +47,7 @@
 
 
 import React from "react"
-import memesData from "../memesData"
+// import memesData from "../memesData"
 import '../components/style.css'
 
 export default function Meme() {
@@ -64,6 +64,17 @@ export default function Meme() {
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
+    const [allMeme, setAllMeme] = React.useState([])
+    React.useEffect(() => {
+        // console.log("Effect function ran")
+        // console.log(starWarsData)
+        fetch(`https://api.imgflip.com/get_memes`)
+        .then(res => res.json())
+        .then(data => setAllMeme(data.data.memes))
+        // console.log(meme)
+    }, [])
+
+        // console.log(allMeme)
     function handleChange(event){
       const {name, value, type, checked} = event.target
       setMeme(prevMeme => {
@@ -73,20 +84,19 @@ export default function Meme() {
            }
       })
     }
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
     
     
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+        // const memesArray = allMeme.data.memes
+        const randomNumber = Math.floor(Math.random() * allMeme.length)
+        const url = allMeme[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         }))
         
     }
-    console.log(meme.topText, meme.bottomText)
+    // console.log(meme.topText, meme.bottomText)
     return (
         <main>
             <div className="form">
